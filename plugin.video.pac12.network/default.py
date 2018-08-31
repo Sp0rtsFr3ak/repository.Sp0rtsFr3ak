@@ -33,7 +33,7 @@ fanart    = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.
 logo       = xbmc.translatePath(os.path.join('special://home/addons/plugin.video.pac12.network/resources/logos', ''))
 
 def main():
-	addLink('PAC-12 Network','http://p12n-lh.akamaihd.net/i/network_delivery@428818/master.m3u8',1,logo+'1.png')
+	addLink('PAC-12 Network','https://p12n.pac-12.com/index.m3u8',1,logo+'1.png')
 	#addLink('PAC-12 Plus','http://p12x-lh.akamaihd.net/i/pac12plus_delivery@198236/master.m3u8',1,logo+'2.png')
 	addLink('PAC-12 Arizona','http://p12a-lh.akamaihd.net/i/arizona_delivery@199730/master.m3u8',1,logo+'3.png')
 	addLink('PAC-12 Bay Area','http://p12b-lh.akamaihd.net/i/bayarea_delivery@429334/master.m3u8',1,logo+'4.png')
@@ -42,12 +42,12 @@ def main():
 	addLink('PAC-12 Oregon','http://p12o-lh.akamaihd.net/i/oregon_delivery@103261/master.m3u8',1,logo+'7.png')
 	addLink('PAC-12 Washington','http://p12w-lh.akamaihd.net/i/washington_delivery@426584/master.m3u8',1,logo+'8.png')
 	
-		
+
 def play(name,url):
 		stream_url = url
 		liz        = xbmcgui.ListItem(name, path=stream_url)
 		xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, liz)
-		
+
 def open_url(url):
 	req      = urllib2.Request(url)
 	req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
@@ -56,7 +56,7 @@ def open_url(url):
 	link     = cleanHex(link)
 	response.close()
 	return link
-	
+
 def cleanHex(text):
 	def fixup(m):
 		text        = m.group(0)
@@ -64,7 +64,7 @@ def cleanHex(text):
 		else: return unichr(int(text[2:-1])).encode('utf-8')
 	try: return re.sub("(?i)&#\w+;", fixup, text.decode('ISO-8859-1').encode('utf-8'))
 	except: return re.sub("(?i)&#\w+;", fixup, text.encode("ascii", "ignore").encode('utf-8'))
-		
+
 def get_params():
 		param=[]
 		paramstring=sys.argv[2]
@@ -80,9 +80,9 @@ def get_params():
 						splitparams=pairsofparams[i].split('=')
 						if (len(splitparams))==2:
 								param[splitparams[0]]=splitparams[1]
-								
+
 		return param
-		
+
 def addLink(name,url,mode,iconimage):
 		u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)
 		ok=True
@@ -92,7 +92,7 @@ def addLink(name,url,mode,iconimage):
 		liz.setProperty("IsPlayable","true")
 		ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)
 		return ok
-		
+
 params=get_params()
 url=None
 name=None
