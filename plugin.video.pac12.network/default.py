@@ -35,13 +35,13 @@ logo       = xbmc.translatePath(os.path.join('special://home/addons/plugin.video
 def main():
 	addLink('PAC-12 Network','https://p12n.pac-12.com/index.m3u8',1,logo+'1.png')
 	#addLink('PAC-12 Plus','http://p12x-lh.akamaihd.net/i/pac12plus_delivery@198236/master.m3u8',1,logo+'2.png')
-	addLink('PAC-12 Arizona','http://p12a-lh.akamaihd.net/i/arizona_delivery@199730/master.m3u8',1,logo+'3.png')
-	addLink('PAC-12 Bay Area','http://p12b-lh.akamaihd.net/i/bayarea_delivery@429334/master.m3u8',1,logo+'4.png')
-	addLink('PAC-12 Los Angeles','http://p12l-lh.akamaihd.net/i/la_delivery@425541/master.m3u8',1,logo+'5.png')
-	addLink('PAC-12 Mountain','http://p12m-lh.akamaihd.net/i/mountain_delivery@428912/master.m3u8',1,logo+'6.png')
-	addLink('PAC-12 Oregon','http://p12o-lh.akamaihd.net/i/oregon_delivery@103261/master.m3u8',1,logo+'7.png')
-	addLink('PAC-12 Washington','http://p12w-lh.akamaihd.net/i/washington_delivery@426584/master.m3u8',1,logo+'8.png')
-	
+	addLink('PAC-12 Arizona','https://p12a.pac-12.com/index.m3u8',1,logo+'3.png')
+	addLink('PAC-12 Bay Area','https://p12b.pac-12.com/index.m3u8',1,logo+'4.png')
+	addLink('PAC-12 Los Angeles','https://p12l.pac-12.com/index.m3u8',1,logo+'5.png')
+	addLink('PAC-12 Mountain','https://p12m.pac-12.com/index.m3u8',1,logo+'6.png')
+	addLink('PAC-12 Oregon','https://p12o.pac-12.com/index.m3u8',1,logo+'7.png')
+	addLink('PAC-12 Washington','https://p12w.pac-12.com/index.m3u8',1,logo+'8.png')
+
 
 def play(name,url):
 		stream_url = url
